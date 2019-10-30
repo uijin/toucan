@@ -1,0 +1,31 @@
+name = "Toucan"
+description = "Inspired from Pelican default theme"
+license = "AGPL"
+homepage = "---"
+# The minimum version of Zola required
+min_version = "0.4.0"
+# An optional live demo URL
+demo = "---"
+
+# Any variable there can be overriden in the end user `config.toml`
+# You don't need to prefix variables by the theme name but as this will
+# be merged with user data, some kind of prefix or nesting is preferable
+# Use snake_casing to be consistent with the rest of Zola
+[extra]
+# Put all your custom variables here
+title = "Toucan theme"
+title_pic = "/favicon.ico"
+description = "Theme for Zola inspired from Pelican website theme"
+license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
+
+# The theme author info: you!
+[author]
+name = "Hugo Trentesaux"
+homepage = "https://trentesaux.fr/"
+
+# If this is porting a theme from another static site engine, provide
+# the info of the original author here
+[original]
+author =  "---"
+homepage = "---"
+repo = "---"

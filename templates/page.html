@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block title %}{{ page.title }}{% endblock title %}
+{% block description %}{{ page.description }}{% endblock description %}
+
+{% block head %}
+{% if page.extra.katex %}
+<link rel="stylesheet" href="{{ get_url(path="katex.css") }}">
+<script defer src="{{ get_url(path="katex.js")}}"></script>
+<script defer src="{{ get_url(path="auto-render.js") }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+              {left: "££", right: "££", display: true},
+              {left: "$", right: "$", display: false},
+            ]
+        });
+    });
+</script>
+{% endif %}
+{% endblock head %}
+
+{% block main %}
+<section class="card page">
+<h1>{{ page.title }}</h1>
+{{ page.content | safe }}
+
+{# TODO activate once tag management is ok #}
+{% if 0 and page.taxonomies %}
+  {% set tags = page.taxonomies.tags %}
+  <br>
+  {% include "tags.html" %}
+{% endif %}
+</section>
+{% endblock main %}

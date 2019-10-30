@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{config.extra.title}}{% endblock title %}</title>
+  <meta name="description" content="{% block description %}{{config.extra.description}}{% endblock description %}">
+  <link rel="stylesheet" type="text/css" href="{{get_url(path="base.css")}}">
+  {% block head %}{% endblock head %}
+</head>
+<body>
+  <div id="container">
+    <header><a href="{{config.base_url}}"><h1><img id="title_pic" alt="" src="{{config.extra.title_pic}}"/>{{config.extra.title}}</h1></a></header>
+    <nav>{% include "nav.html" %}</nav>
+    <main>{% block main %}{% endblock main %}</main>
+    <footer>{% include "footer.html" %}</footer>
+  </div>
+</body>
+</html>

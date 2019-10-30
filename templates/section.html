@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}{{ section.title }}{% endblock title %}
+
+{% block main %}
+{# if section has a description print it, else print a preview of the first article  #}
+
+{% if section.content %}
+  <section class="card">
+    {{ section.content | safe }}
+  </section>
+  {% set feed = section.pages %}
+
+  {% else %}
+  {% set article = section.pages | first %}
+  {% set feed = section.pages | slice(start=1) %}
+  {% if article %}
+  <section class="card preview">
+      <div class="date">{{ article.date }}</div>
+      <h1><a href="{{article.permalink}}">{{ article.title }}</a></h1>
+      <div>{{ article.content | safe | truncate(length=1000) | safe }}</div>
+  </section>
+  {% endif %}
+{% endif %}
+
+{# section other articles (feed) #}
+<section class="card feed">
+  {% include "feed.html" %}
+</section>
+
+{% endblock main %}

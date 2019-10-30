@@ -1,0 +1,88 @@
+@charset "utf-8"
+@import "color"
+@import "layout"
+@import "fonts"
+@import "tweak"
+
+// === body
+body
+  font-family: sans-serif
+  background-color: $body-background
+  color: $body-color
+body p
+  font-size: 90%
+
+// === header
+header a
+  color: $body-color
+  text-decoration: none
+  font-size: 110%
+header a:hover
+  color: $link-color
+
+// === nav
+nav
+  background-color: $nav-background
+nav a
+  padding: 0.5em 1.5em
+  display: inline-block
+  color: $nav-color
+  text-decoration: none
+  font-size: 110%
+nav a:hover, nav a.active
+  background-color: $nav-background-active
+nav a:first-child
+  border-radius: 5px 0 0 5px
+
+
+// === main
+main
+  background-color: $main-background
+
+// === feed
+section.feed
+  padding: 1em 0
+a.feedlink
+  text-decoration: none
+  display: block
+  padding: 0 1em
+  color: $body-color
+a.feedlink:hover
+  border-left: solid 1px $link-color
+div.date
+  float: right
+  font-size: 90%
+section.feed h3
+  color: $link-color
+
+// === preview / page
+section.preview h1 a
+  text-decoration: none
+section.preview h1 a:hover
+  text-decoration: underline
+
+
+// === footer
+footer #license
+  text-align: right
+
+
+
+
+// === titles
+h1, h2, h3, h4, h5, h6
+  font-family: "Yanone Kaffeesatz Regular"
+
+h1
+  margin: 0.5em 0
+  font-size: 2.5em
+h2
+  font-size: 1.8em
+h3
+  font-size: 1.5em
+h4
+  font-size: 1.3em
+h5
+  font-size: 1.1em
+h6
+  font-size: 1em

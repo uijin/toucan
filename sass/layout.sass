@@ -1,0 +1,21 @@
+// change layout for screen larger than this
+$breakpoint-small: 600px
+$breakpoint-medium: 900px
+
+#container
+  margin: auto
+
+// small screen
+@media (max-width: $breakpoint-small)
+  #container
+    width: 95vw
+
+// medium screen
+@media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium)
+  #container
+    width: 70vw
+
+// large screen
+@media (min-width: $breakpoint-medium)
+  #container
+    width: 50vw
