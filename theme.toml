@@ -1,11 +1,11 @@
 name = "Toucan"
 description = "Inspired from Pelican default theme"
 license = "AGPL"
-homepage = "---"
+homepage = "https://git.42l.fr/HugoTrentesaux/toucan"
 # The minimum version of Zola required
 min_version = "0.4.0"
 # An optional live demo URL
-demo = "---"
+demo = ""
 
 # Any variable there can be overriden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will
