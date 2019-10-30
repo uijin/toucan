@@ -1,3 +1,5 @@
+{% import "macros.html" as macros %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +13,9 @@
 <body>
   <div id="container">
     <header><a href="{{config.base_url}}"><h1><img id="title_pic" alt="" src="{{config.extra.title_pic}}"/>{{config.extra.title}}</h1></a></header>
-    <nav>{% include "nav.html" %}</nav>
+    <nav>{{ macros::nav() }}</nav>
     <main>{% block main %}{% endblock main %}</main>
-    <footer>{% include "footer.html" %}</footer>
+    <footer>{{ macros::footer() }}</footer>
   </div>
 </body>
 </html>

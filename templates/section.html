@@ -24,8 +24,10 @@
 {% endif %}
 
 {# section other articles (feed) #}
+{% if feed %}
 <section class="card feed">
-  {% include "feed.html" %}
+  {{ macros::feed(feed=feed) }}
 </section>
+{% endif %}
 
 {% endblock main %}

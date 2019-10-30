@@ -1,6 +1,0 @@
-{% set index = get_section(path="_index.md") %}
-
-{% for s in index.subsections %}{% set subsection = get_section(path=s) %}<a href="{{ subsection.permalink }}"
-    {% if current_path %}{% if current_path is starting_with(subsection.path) %}class="active"{% endif %}{% endif %}>
-    {{subsection.title}}
-</a>{% endfor %}

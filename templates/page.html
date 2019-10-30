@@ -28,9 +28,8 @@
 
 {# TODO activate once tag management is ok #}
 {% if 0 and page.taxonomies %}
-  {% set tags = page.taxonomies.tags %}
   <br>
-  {% include "tags.html" %}
+  {{ macros::tags(tags=page.taxonomies.tags) }}
 {% endif %}
 </section>
 {% endblock main %}

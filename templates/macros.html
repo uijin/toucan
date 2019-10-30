@@ -1,0 +1,44 @@
+{# === NAV ===#}
+{% macro nav() %}
+{% set index = get_section(path="_index.md") %}
+{% for s in index.subsections %}{% set subsection = get_section(path=s) %}<a href="{{ subsection.permalink }}"
+    {% if current_path %}{% if current_path is starting_with(subsection.path) %}class="active"{% endif %}{% endif %}>
+    {{subsection.title}}
+</a>{% endfor %}
+{% endmacro nav %}
+
+{# === FOOTER ===#}
+{% macro footer() %}
+<div class="card">
+Made with <a href="http://getzola.org/">Zola</a>, static site generator in <a href="https://www.rust-lang.org/">Rust</a>.
+</div>
+<div id="license">{{config.extra.license | safe}}</div>
+<br>
+{% endmacro footer %}
+
+{# === TAGS ===#}
+{% macro tags(tags) %}
+{% for tag in tags %}
+<span class="tag">{{ tag }}</span>
+{% endfor %}
+{% endmacro tags %}
+
+{# === FEED ===#}
+{% macro feed(feed) %}
+{# 'feed' must be defined by the template including this one #}
+{% for article in feed %}
+  <a href="{{ article.permalink }}" class="feedlink">
+    <div>
+      <div class="date">{{ article.date }}</div>
+      <h3>{{ article.title }}</h3>
+      <p>
+        {% if article.description %}
+          {{ article.description | truncate(length=300)}}
+        {% else %}
+          {{ article.content | safe | striptags | truncate(length=300)}}
+        {% endif %}
+      </p>
+    </div>
+  </a>
+{% endfor %}
+{% endmacro feed %}
