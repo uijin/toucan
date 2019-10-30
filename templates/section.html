@@ -18,7 +18,7 @@
   <section class="card preview">
       <div class="date">{{ article.date }}</div>
       <h1><a href="{{article.permalink}}">{{ article.title }}</a></h1>
-      <div>{{ article.content | safe | truncate(length=1000) | safe }}</div>
+      <div>{{ article.content | safe | striptags | truncate(length=1000) }}</div> {# TODO use truncate html when ready #}
   </section>
   {% endif %}
 {% endif %}

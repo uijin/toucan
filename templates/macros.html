@@ -35,10 +35,32 @@ Made with <a href="http://getzola.org/">Zola</a>, static site generator in <a hr
         {% if article.description %}
           {{ article.description | truncate(length=300)}}
         {% else %}
-          {{ article.content | safe | striptags | truncate(length=300)}}
+          {{ article.content | safe | striptags | truncate(length=300)}} {# TODO use truncate html when ready #}
         {% endif %}
       </p>
     </div>
   </a>
 {% endfor %}
 {% endmacro feed %}
+
+{# === TUNCATE === #}
+{# similar to https://docs.djangoproject.com/en/stable/ref/templates/builtins/#truncatechars-html #}
+{# TODO implement this filter #}
+{# see issue https://github.com/Keats/tera/issues/46 #}
+
+{# === KATEX ===#}
+{% macro katex() %}
+<link rel="stylesheet" href="{{ get_url(path="katex.css") }}">
+<script defer src="{{ get_url(path="katex.js")}}"></script>
+<script defer src="{{ get_url(path="auto-render.js") }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+              {left: "££", right: "££", display: true},
+              {left: "$", right: "$", display: false},
+            ]
+        });
+    });
+</script>
+{% endmacro katex %}
