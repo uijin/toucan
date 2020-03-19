@@ -27,7 +27,7 @@ Made with <a href="http://getzola.org/">Zola</a>, static site generator in <a hr
 {% macro feed(feed) %}
 {# 'feed' must be defined by the template including this one #}
 {% for article in feed %}
-  <a href="{{ article.permalink }}" class="feedlink">
+  <a href="{{ article.permalink }}" class="feed-link">
     <div>
       <div class="date">{{ article.date }}</div>
       <h3>{{ article.title }}</h3>
