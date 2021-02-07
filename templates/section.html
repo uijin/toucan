@@ -17,6 +17,7 @@
   {% if article %}
   <section class="card preview">
       <div class="date">{{ article.date }}</div>
+    {{ macros::tags(article=article) }}
     <h1><a href="{{article.permalink}}">{{ article.title }}</a></h1>
     {% if article.description %}
       <p>{{ article.description | safe }}</p>

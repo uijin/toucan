@@ -11,6 +11,7 @@
 
 {% block main %}
 <section class="card page">
+{{ macros::tags(article=page) }}
 <h1>{{ page.title }}</h1>
 {% if page.description %}
   <p class="description">

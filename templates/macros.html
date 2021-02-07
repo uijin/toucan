@@ -17,10 +17,12 @@ Made with <a href="http://getzola.org/">Zola</a>, static site generator in <a hr
 {% endmacro footer %}
 
 {# === TAGS ===#}
-{% macro tags(tags) %}
-{% for tag in tags %}
-<span class="tag">{{ tag }}</span>
+{% macro tags(article) %}
+{% if article.taxonomies %}
+{% for tag in article.taxonomies.tags %}
+<span class="tag">#{{ tag }}</span>
 {% endfor %}
+{% endif %}
 {% endmacro tags %}
 
 {# === FEED ===#}
