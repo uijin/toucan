@@ -17,8 +17,12 @@
   {% if article %}
   <section class="card preview">
       <div class="date">{{ article.date }}</div>
-      <h1><a href="{{article.permalink}}">{{ article.title }}</a></h1>
-      <div>{{ article.content | safe | striptags | truncate(length=1000) }}</div> {# TODO use truncate html when ready #}
+    <h1><a href="{{article.permalink}}">{{ article.title }}</a></h1>
+    {% if article.description %}
+      <p>{{ article.description | safe }}</p>
+      {% else %}
+        <div>{{ article.content | safe | striptags | truncate(length=1000) }}</div> {# TODO use truncate html when ready #}
+      {% endif %}
   </section>
   {% endif %}
 {% endif %}

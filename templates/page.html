@@ -12,6 +12,11 @@
 {% block main %}
 <section class="card page">
 <h1>{{ page.title }}</h1>
+{% if page.description %}
+  <p class="description">
+    {{ page.description | safe }}
+  </p>
+{% endif %}
 {{ page.content | safe }}
 
 {# TODO activate once tag management is ok #}
