@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block main %}
+<h1>Tag: {{ term.name }}</h1>
+{% for page in term.pages %}
+  <p>
+    {{ page.date }}
+    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+    {% if page.description %}
+      {{ page.description }}
+    {% endif %}
+  </p>
+{% endfor %}
+{% endblock main %}

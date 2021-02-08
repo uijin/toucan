@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block main %}
+<ul id="tag-list">
+  {% for tag in terms %}
+    <li><a href="{{ tag.permalink | safe }}">{{ tag.name }}</a> ({{ tag.pages | length }})</li>
+  {% endfor %}
+</ul>
+{% endblock main %}
