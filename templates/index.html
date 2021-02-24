@@ -9,6 +9,8 @@
   <meta name="description" content="{% block description %}{{config.extra.description}}{% endblock description %}">
   <link rel="stylesheet" type="text/css" href="{{get_url(path="base.css")}}">
   {% block head %}{% endblock head %}
+  <!-- Google AdSense script-->
+  <script data-ad-client="ca-pub-6451568943535452" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
   <div id="container">
@@ -16,18 +18,6 @@
     <nav>{{ macros::nav() }}</nav>
     <main>{% block main %}{% endblock main %}</main>
     <footer>{{ macros::footer() }}</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- π-Shaped Spirit -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-6451568943535452"
-        data-ad-slot="2052964413"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
   </div>
 </body>
 </html>
